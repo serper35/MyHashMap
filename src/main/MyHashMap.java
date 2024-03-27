@@ -1,3 +1,5 @@
+package main;
+
 import java.util.*;
 
 /*A hashMap implementation by Vladislav Volkov
@@ -8,7 +10,7 @@ import java.util.*;
 public class MyHashMap<K, V> implements MyMap<K, V> {
 
 
-    /*Creating of MyHashMap*/
+    /*Creating of Main.MyHashMap*/
     private List<LinkedList<MyEntry<K, V>>> buckets;
 
     /*Initial size*/
@@ -20,7 +22,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     /*Count the number of pairs added*/
     private int size = 0;
 
-    /*Constructs a new MyHashMap with default capacity*/
+    /*Constructs a new Main.MyHashMap with default capacity*/
     public MyHashMap() {
         buckets = new ArrayList<>(defaultCapacity);
         for (int i = 0; i < defaultCapacity; i++) {

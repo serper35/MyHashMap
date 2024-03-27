@@ -1,3 +1,8 @@
+package test;
+
+import main.MyEntry;
+import main.MyHashMap;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,13 +25,13 @@ public class MyHashMapTest {
 
     @Test
     public void shouldPutEntries() {
-        assertEquals(numberOfElements, map.size());
+        Assert.assertEquals(numberOfElements, map.size());
     }
 
     @Test
     public void shouldGetEntries() {
         for (int i = 0; i < numberOfElements; i++) {
-            assertEquals("Value " + i, map.get(i));
+            Assert.assertEquals("Value " + i, map.get(i));
         }
     }
 
@@ -36,7 +41,7 @@ public class MyHashMapTest {
             map.remove(i);
         }
 
-        assertEquals(0, map.size());
+        Assert.assertEquals(0, map.size());
 
         assertTrue(map.isEmpty());
     }
@@ -65,14 +70,14 @@ public class MyHashMapTest {
 
         map.clear();
 
-        assertEquals(0, map.size());
+        Assert.assertEquals(0, map.size());
 
         assertTrue(map.isEmpty());
     }
 
     @Test
     public void shouldReturnSetOfKeys() {
-        assertEquals(numberOfElements, map.keySet().size());
+        Assert.assertEquals(numberOfElements, map.keySet().size());
 
         for (int i = 0; i < numberOfElements; i++) {
             assertTrue(map.keySet().contains(i));
@@ -81,7 +86,7 @@ public class MyHashMapTest {
 
     @Test
     public void shouldReturnListOfValues() {
-        assertEquals(numberOfElements, map.values().size());
+        Assert.assertEquals(numberOfElements, map.values().size());
 
         for (int i = 0; i < numberOfElements; i++) {
             assertTrue(map.values().contains("Value " + i));
@@ -90,7 +95,7 @@ public class MyHashMapTest {
 
     @Test
     public void shouldReturnEntrySet() {
-        assertEquals(numberOfElements, map.entrySet().size());
+        Assert.assertEquals(numberOfElements, map.entrySet().size());
 
         for (int i = 0; i < numberOfElements; i++) {
             assertTrue(map.entrySet().contains((new MyEntry<>(i, "Value " + i))));
@@ -108,6 +113,6 @@ public class MyHashMapTest {
             testMap.put(i, "Value " + i);
         }
 
-        assertEquals(testMap.size(), newCapacity);
+        Assert.assertEquals(testMap.size(), newCapacity);
     }
 }
